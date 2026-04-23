@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,13 +26,7 @@ SECRET_KEY = 'django-insecure-3qgyi1s0c_%elxe%0fn!+_m6_2+go9=il2%&^pgd9*))h$lv$m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'lab-devops-4oa7.vercel.app',
-    '.vercel.app',  # couvre tous les sous-domaines vercel (preview URLs)
-]
-
+ALLOWED_HOSTS = ['lab-devops-4oa7.vercel.app',]
 
 # Application definition
 
@@ -124,4 +119,4 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.2/
+# https://docs.djangoproject.com/en/4.2
