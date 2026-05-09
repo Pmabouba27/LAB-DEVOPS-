@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+sentry_sdk.init(
+    dsn="https://2c475050bc55ec2aac57c11bc70b3b78@o4511359436521472.ingest.de.sentry.io/4511359443730512", 
+    integrations=[DjangoIntegration()], # remplace par ton DSN
+    # Capture 100% des transactions (pour les tests, sinon mets 0.1 en prod)
+    traces_sample_rate=1.0,
+    # Active le profiling
+    send_default_pii=True
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
